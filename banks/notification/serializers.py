@@ -11,6 +11,11 @@ class NotificationSerializer(serializers.ModelSerializer):
 
 class CurrentNewsSerializer(serializers.ModelSerializer):
 
+    category = serializers.SerializerMethodField()
+
     class Meta:
         model = CurrentNews
-        fields = ('title', 'img', 'description', 'created', 'source', 'published')
+        fields = ('title', 'img', 'description', 'category', 'created', 'source', 'published')
+
+    def get_category(self, obj):
+        return obj.category.name
