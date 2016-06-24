@@ -30,6 +30,8 @@ class CurrentNews(models.Model):
     category = models.ForeignKey(Category)
     title = models.CharField(max_length=255)
     img = models.ImageField()
+    source = models.CharField(max_length=100)
+    published = models.DateField()
     description = models.TextField()
     created = models.DateField(auto_now_add=True)
     updated = models.DateField(auto_now_add=True)

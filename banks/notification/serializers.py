@@ -13,4 +13,4 @@ class CurrentNewsSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = CurrentNews
-        fields = ('title', 'img', 'description', 'created')
+        fields = ('title', 'img', 'description', 'created', 'source', 'published')
