@@ -25,3 +25,10 @@ class Career(models.Model):
 
     def __str__(self):
         return self.first_name + self.last_name
+
+
+class Subscribe(models.Model):
+
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    created = models.DateField(auto_now_add=True)

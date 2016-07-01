@@ -12,3 +12,9 @@ class CareerSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Career
+
+
+class SubscribeSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Subscribe

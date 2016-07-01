@@ -6,6 +6,7 @@ class NotificationView(generics.ListAPIView):
     queryset = Notification.objects.all()
     serializer_class = NotificationSerializer
 
+
 class CurrentNewsView(generics.ListAPIView):
 
     queryset = CurrentNews.objects.all()
