@@ -34,12 +34,9 @@ class SubscribeView(APIView):
     def post(self, request):
         req_data = request.data
         serializer = SubscribeSerializer(data=req_data)
-        import pdb;pdb.set_trace()
-
         if serializer.is_valid():
             serializer.save()
             #send mail
             self.send_mail(serializer.data)
             return Response(status=status.HTTP_200_OK)
-        import pdb;pdb.set_trace()
         return Response(status=status.HTTP_400_BAD_REQUEST)
