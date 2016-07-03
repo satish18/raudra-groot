@@ -18,3 +18,9 @@ class SubscribeSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Subscribe
+
+
+class FAQSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = FAQ

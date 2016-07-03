@@ -40,3 +40,9 @@ class SubscribeView(APIView):
             self.send_mail(serializer.data)
             return Response(status=status.HTTP_200_OK)
         return Response(status=status.HTTP_400_BAD_REQUEST)
+
+
+class FAQView(generics.ListAPIView):
+
+    queryset = FAQ.objects.all()
+    serializer_class = FAQSerializer

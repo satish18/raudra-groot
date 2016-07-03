@@ -19,8 +19,11 @@ class Career(models.Model):
     last_name = models.CharField(max_length=100)
     email = models.EmailField()
     mobile = models.CharField(max_length=12)
-    subject = models.CharField(max_length=255)
-    resume = models.FileField()
+    # subject = models.CharField(max_length=255)
+    college = models.CharField(max_length=255)
+    university = models.CharField(max_length=255)
+    percentage = models.CharField(max_length=3)
+    resume = models.FileField(blank=True, null=True)
     created = models.DateField(auto_now_add=True)
 
     def __str__(self):
@@ -32,3 +35,13 @@ class Subscribe(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField()
     created = models.DateField(auto_now_add=True)
+
+
+class FAQ(models.Model):
+
+    question = models.CharField(max_length=255)
+    answer = models.TextField()
+    created = models.DateField(auto_now_add=True)
+
+    def __str__(self):
+        return self.question
