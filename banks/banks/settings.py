@@ -142,10 +142,6 @@ MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
 
 MEDIA_URL = '/media/'
 
-TEMPLATE_DIRS = (
-    os.path.join(os.path.dirname(__file__), 'templates'),
-)
-
 CORS_ORIGIN_ALLOW_ALL = True
 
 REST_FRAMEWORK = {

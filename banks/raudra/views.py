@@ -14,7 +14,9 @@ class CareerView(APIView):
         to_ = (data.get('email'),)
         subject = "Ravindra Babu Ravula"
         body = "<html><h4>Hi, "+ data.get('first_name')+"</h2><br><p>Thanks For applying .</p></html>"
-        send_mail(subject, body, from_, to_)
+        msg = EmailMultiAlternatives(subject, body, from_, to_)
+        msg.attach_alternative(body, 'text/html')
+        msg.send()
 
     def get_body_content(self, data):
         body = '<html><body>'
@@ -24,8 +26,6 @@ class CareerView(APIView):
         body += "<tr><td>College</td><td>"+data.get('college')+"</td></tr>"
         body += "<tr><td>University</td></td>"+data.get('university')+"</td></tr></table></body></html>"
         return body
-
-
 
     def send_mail_to_raudra(self, data):
         from_ = settings.EMAIL_HOST_USER
